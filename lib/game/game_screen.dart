@@ -39,7 +39,7 @@ class _GameScreenState extends State<GameScreen> {
         children: [
           Visibility(
             child: Text(
-              'Player ${widget.game.winner?.playerNumber ?? 0 + 1} won',
+              'Player ${(widget.game.winner?.playerNumber ?? 0) + 1} won',
               style: TextStyle(decoration: TextDecoration.none),
             ),
             visible: widget.game.winner != null,
