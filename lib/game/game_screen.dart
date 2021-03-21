@@ -21,6 +21,21 @@ class _GameScreenState extends State<GameScreen> {
     var url = Uri.parse(server + gameUri + '/' + widget.game.id.toString());
     http.Response response =
         await http.put(url, body: {'pit_id': pitId.toString()});
+    if(response.statusCode >= 400) {
+      var responseBody = json.decode(response.body);
+
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text(responseBody['status']),
+              content: Text(responseBody['error']),
+              actions: [
+                TextButton(onPressed: () => Navigator.pop(context), child: Text('Ok'))
+              ],
+            );
+          });
+    }
     Game game =
         Game.fromJson(json.decode(response.body) as Map<String, dynamic>);
     setState(() {
