@@ -13,6 +13,7 @@ Pit _$PitFromJson(Map<String, dynamic> json) {
     json['next'] as int,
     Player.fromJson(json['owner'] as Map<String, dynamic>),
     json['opposite'] as int?,
+    json['playerNumber'] as int,
   );
 }
 
@@ -22,4 +23,5 @@ Map<String, dynamic> _$PitToJson(Pit instance) => <String, dynamic>{
       'next': instance.next,
       'owner': instance.owner.toJson(),
       'opposite': instance.opposite,
+      'playerNumber': instance.playerNumber,
     };

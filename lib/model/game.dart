@@ -13,9 +13,9 @@ class Game {
 
   Board board;
 
-  Player player0;
+  Player playerZero;
 
-  Player player1;
+  Player playerOne;
 
   GameStatus gameStatus;
 
@@ -25,7 +25,7 @@ class Game {
 
   bool tie;
 
-  Game(this.id, this.board, this.player0, this.player1, this.gameStatus,
+  Game(this.id, this.board, this.playerZero, this.playerOne, this.gameStatus,
       this.currentPlayer, this.winner, this.tie);
 
   factory Game.fromJson(Map<String, dynamic> json) => _$GameFromJson(json);

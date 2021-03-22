@@ -10,8 +10,8 @@ Game _$GameFromJson(Map<String, dynamic> json) {
   return Game(
     json['id'] as int,
     Board.fromJson(json['board'] as Map<String, dynamic>),
-    Player.fromJson(json['player0'] as Map<String, dynamic>),
-    Player.fromJson(json['player1'] as Map<String, dynamic>),
+    Player.fromJson(json['playerZero'] as Map<String, dynamic>),
+    Player.fromJson(json['playerOne'] as Map<String, dynamic>),
     _$enumDecode(_$GameStatusEnumMap, json['gameStatus']),
     Player.fromJson(json['currentPlayer'] as Map<String, dynamic>),
     json['winner'] == null
@@ -24,8 +24,8 @@ Game _$GameFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$GameToJson(Game instance) => <String, dynamic>{
       'id': instance.id,
       'board': instance.board.toJson(),
-      'player0': instance.player0.toJson(),
-      'player1': instance.player1.toJson(),
+      'playerZero': instance.playerZero.toJson(),
+      'playerOne': instance.playerOne.toJson(),
       'gameStatus': _$GameStatusEnumMap[instance.gameStatus],
       'currentPlayer': instance.currentPlayer.toJson(),
       'winner': instance.winner?.toJson(),

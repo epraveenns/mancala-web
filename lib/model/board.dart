@@ -8,15 +8,15 @@ part 'board.g.dart';
 class Board {
   int id;
 
-  List<Pit> pits0;
+  List<Pit> pitsForPlayerZero;
 
-  List<Pit> pits1;
+  List<Pit> pitsForPlayerOne;
 
-  Pit mancala0;
+  Pit bigPitForPlayerZero;
 
-  Pit mancala1;
+  Pit bigPitForPlayerOne;
 
-  Board(this.id, this.pits0, this.pits1, this.mancala0, this.mancala1);
+  Board(this.id, this.pitsForPlayerZero, this.pitsForPlayerOne, this.bigPitForPlayerZero, this.bigPitForPlayerOne);
 
   factory Board.fromJson(Map<String, dynamic> json) => _$BoardFromJson(json);
 

@@ -17,7 +17,9 @@ class Pit {
 
   int? opposite;
 
-  Pit(this.id, this.coinsCount, this.next, this.owner, this.opposite);
+  int playerNumber;
+
+  Pit(this.id, this.coinsCount, this.next, this.owner, this.opposite, this.playerNumber);
 
   factory Pit.fromJson(Map<String, dynamic> json) => _$PitFromJson(json);
 
